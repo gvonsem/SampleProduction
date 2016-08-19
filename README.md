@@ -50,7 +50,7 @@ cmsrel CMSSW_8_0_11
 cd CMSSW_8_0_11/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab.sh
-for i in `ls ../../QStarProduction/DIGI-RECO-MiniAODv2`; do ln -s ../../QStarProduction/DDIGI-RECO-MiniAODv2/$i; done
+for i in `ls ../../QStarProduction/DIGI-RECO-MiniAODv2`; do ln -s ../../QStarProduction/DIGI-RECO-MiniAODv2/$i; done
 ```
 
 ## DIGI step
