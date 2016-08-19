@@ -8,9 +8,9 @@ DATE=`date +'%F'`
 for CONFIG in `ls configs/*.py`; do
   #echo $CONFIG
   CONFIG=`print $CONFIG(:t:r)`
-  CONFIG="${CONFIG%_1_cfg}"
+  CONFIG2="${CONFIG%_1_cfg}"
   #echo $CONFIG
-  DATASET=${CONFIG}_GEN-SIM
+  DATASET=${CONFIG2}_GEN-SIM
   CONFIGNAME=crabConfig_${DATASET}.py
   cp $TEMPLATE $CONFIGNAME
   sed -i -e "s/CONFIG/$CONFIG/g" $CONFIGNAME
