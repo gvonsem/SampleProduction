@@ -18,6 +18,8 @@ for CONFIG in `ls configs/*.py`; do
   sed -i -e "s/DATE/$DATE/g" $CONFIGNAME
   sed -i -e "s/EVENTSJOB/$EVENTSJOB/g" $CONFIGNAME
   sed -i -e "s/NJOBS/$NJOBS/g" $CONFIGNAME
+  # crab submit -c $CONFIGNAME --dryrun --skip-estimates
+  # crab proceed
   crab submit -c $CONFIGNAME
   #break
 done
