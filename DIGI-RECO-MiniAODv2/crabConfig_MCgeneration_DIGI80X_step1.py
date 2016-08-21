@@ -11,7 +11,7 @@ config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'config_DIGI80X_step1.py'
 
 config.Data.inputDataset = 'DATASETIN'
-config.Data.inputDBS = 'global'
+config.Data.inputDBS = 'phys03'
 config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 1
 config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
