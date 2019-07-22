@@ -54,7 +54,7 @@ cmsrel CMSSW_9_4_0_patch1
 cd CMSSW_9_4_0_patch1/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab.sh
-for i in `ls ../../QStarProduction/DIGI-RECO-MiniAODv2`; do ln -s ../../QStarProduction/DIGI-RECO-MiniAODv2/$i; done
+for i in `ls ../../SampleProduction/DIGI-RECO-MiniAODv2`; do ln -s ../../SampleProduction/DIGI-RECO-MiniAODv2/$i; done
 ```
 
 ## DIGI step
