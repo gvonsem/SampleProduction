@@ -10,8 +10,6 @@ cd signalProduction
 git clone git@github.com:gvonsem/SampleProduction.git
 ```
 
-### at PSI
-
 Get a CMS software environment:
 ```
 source /cvmfs/cms.cern.ch/cmsset_default.sh
