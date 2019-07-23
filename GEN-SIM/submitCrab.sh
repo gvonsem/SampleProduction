@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-EVENTSJOB=200
-NJOBS=165
+EVENTSJOB=100
+NJOBS=100
 TEMPLATE=crabConfig_MCgeneration.py
 DATE=`date +'%F'`
 
