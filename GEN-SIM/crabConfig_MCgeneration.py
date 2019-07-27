@@ -8,7 +8,7 @@ config.General.transferLogs = True
 
 config.JobType.pluginName = 'PrivateMC'
 config.JobType.psetName = 'configs/CONFIG.py'
-config.JobType.numCores = 8
+config.JobType.numCores = 1
 config.JobType.allowUndistributedCMSSW = True
 
 config.Data.outputPrimaryDataset = 'Wprime_WZ_WhadZhad_Herwig7'
