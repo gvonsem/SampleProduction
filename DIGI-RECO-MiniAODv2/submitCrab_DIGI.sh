@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-NJOBS=500
-CRABTEMPLATE=crabConfig_MCgeneration_DIGI80X_step1.py
+NJOBS=100
+CRABTEMPLATE=crabConfig_MCgeneration_DIGI94X_step1.py
 DATE=`date +'%F'`
 
 for DATASETIN in `cat datasets_GENSIM.txt`; do
