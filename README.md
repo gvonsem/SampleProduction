@@ -61,7 +61,7 @@ Put your GEN-SIM dataset names into ```datasets_GENSIM.txt```, one per line.
 
 Then you can submit:
 ```
-submitCrab_DIGI.sh
+./submitCrab_DIGI.sh
 ```
 
 ### job sitting
@@ -85,7 +85,7 @@ Put your DIGI dataset names into ```datasets_DIGI.txt```, one per line.
 
 Then you can submit:
 ```
-submitCrab_RECO.sh
+./submitCrab_RECO.sh
 ```
 
 ### job sitting
