@@ -113,7 +113,7 @@ Put your RECO dataset names into ```datasets_AODSIM.txt```, one per line.
 
 Then you can submit:
 ```
-submitCrab_MiniAODv2.sh
+./submitCrab_MiniAODv2.sh
 ```
 
 ### job sitting
