@@ -1,5 +1,5 @@
 # SampleProduction
-Scripts for private MC production with crab3. Based on repository of Clemens Lange (https://github.com/clelange/QStarProduction).
+Scripts for private MC production with crab3. Based on [repository](https://github.com/clelange/QStarProduction) of Clemens Lange.
 
 ## setup
 
@@ -15,7 +15,7 @@ Get a CMS software environment:
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 ```
 
-Note: the CMSSW releases below and corresponding architectures may be adapted according to the recommended production releases for the campaign, see https://cms-pdmv.cern.ch/mcm/campaigns?page=-1&shown=63. Or other changes can be made if differences in configuration with previous samples are to be minimized. 
+Note: the CMSSW releases below and corresponding architectures may be adapted according to the recommended [production releases for the campaign](https://cms-pdmv.cern.ch/mcm/campaigns?page=-1&shown=63). Or other changes can be made if differences in configuration with previous samples are to be minimized. 
 
 ## GEN-SIM step
 
