@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-NJOBS=1000
+NJOBS=100
 CRABTEMPLATE=crabConfig_MCgeneration_MiniAODv2.py
 DATE=`date +'%F'`
 
@@ -8,11 +8,20 @@ for DATASETIN in `cat datasets_AODSIM.txt`; do
   echo "DATASETIN: $DATASETIN"
   #a=("${(@s/-/)DATASETIN}")
   a=("${(@s|/|)DATASETIN}")
-  INSHORT=$a[2]
-  CRABCONFIG=crabConfig_${INSHORT}_MiniAODv2_80X.py
-  #echo "CRABCONFIG $CRABCONFIG"
-  DATASETOUT=${INSHORT}_MiniAODv2_80X
-  #echo "DATASETOUT: $DATASETOUT"
+#  INSHORT=$a[2]
+  
+  INSHORT=("${(@s|_RECO|)a[3]}")
+  INSHORT=("${(@s|gvonsem-|)INSHORT[1]}")
+#  echo "INSHORT = "$INSHORT 
+
+  ##remove leading whitespaces
+  INSHORT="${INSHORT##*( )}"
+  echo "INSHORT = "$INSHORT  
+ 
+  CRABCONFIG=crabConfig_${INSHORT}_MiniAODv2_94X.py
+  echo "CRABCONFIG $CRABCONFIG"
+  DATASETOUT=${INSHORT}_MiniAODv2_94X
+  echo "DATASETOUT: $DATASETOUT"
   cp $CRABTEMPLATE $CRABCONFIG
   sed -i -e "s|DATASETIN|$DATASETIN|g" $CRABCONFIG
   sed -i -e "s|INSHORT|$INSHORT|g" $CRABCONFIG
