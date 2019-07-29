@@ -10,6 +10,7 @@ config.General.transferLogs = True
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'config_RECO94X_step2.py'
 config.JobType.numCores = 4
+config.JobType.maxMemoryMB = 15200
 config.JobType.allowUndistributedCMSSW = True
 
 config.Data.inputDataset = 'DATASETIN'
