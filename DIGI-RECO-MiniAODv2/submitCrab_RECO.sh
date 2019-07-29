@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-NJOBS=1000
+NJOBS=100
 CRABTEMPLATE=crabConfig_MCgeneration_RECO80X_step2.py
 DATE=`date +'%F'`
 
