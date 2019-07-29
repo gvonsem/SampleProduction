@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: step2 --filein file:B2G-RunIIFall17DRPremix-00059_step1.root --fileout file:B2G-RunIIFall17DRPremix-00059.root --mc --eventcontent AODSIM runUnscheduled --datatier AODSIM --conditions 94X_mc2017_realistic_v10 --step RAW2DIGI,RECO,RECOSIM,EI --nThreads 4 --era Run2_2017 --python_filename B2G-RunIIFall17DRPremix-00059_2_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 10
+# with command line options: step2 --filein file:B2G-RunIIFall17DRPremix-00059_step1.root --fileout file:output_step2.root --mc --eventcontent AODSIM runUnscheduled --datatier AODSIM --conditions 94X_mc2017_realistic_v10 --step RAW2DIGI,RECO,RECOSIM,EI --nThreads 4 --era Run2_2017 --python_filename B2G-RunIIFall17DRPremix-00059_2_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 10
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
@@ -55,7 +55,7 @@ process.AODSIMoutput = cms.OutputModule("PoolOutputModule",
         filterName = cms.untracked.string('')
     ),
     eventAutoFlushCompressedSize = cms.untracked.int32(31457280),
-    fileName = cms.untracked.string('file:B2G-RunIIFall17DRPremix-00059.root'),
+    fileName = cms.untracked.string('file:output_step2.root'),
     outputCommands = process.AODSIMEventContent.outputCommands
 )
 

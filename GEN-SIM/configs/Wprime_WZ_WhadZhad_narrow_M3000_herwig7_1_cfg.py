@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: Configuration/GenProduction/python/Wprime_WZ_WhadZhad_narrow_M3000_herwig7-fragment.py --fileout file:Wprime_WZ_WhadZhad_narrow_M3000_herwig7.root --mc --eventcontent RAWSIM,LHE --datatier GEN-SIM,LHE --conditions 93X_mc2017_realistic_v3 --beamspot Realistic25ns13TeVEarly2017Collision --step LHE,GEN,SIM --nThreads 8 --geometry DB:Extended --era Run2_2017 --python_filename Wprime_WZ_WhadZhad_narrow_M3000_herwig7_1_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 10
+# with command line options: Configuration/GenProduction/python/Wprime_WZ_WhadZhad_narrow_M3000_herwig7-fragment.py --fileout file:output.root --mc --eventcontent RAWSIM,LHE --datatier GEN-SIM,LHE --conditions 93X_mc2017_realistic_v3 --beamspot Realistic25ns13TeVEarly2017Collision --step LHE,GEN,SIM --nThreads 8 --geometry DB:Extended --era Run2_2017 --python_filename Wprime_WZ_WhadZhad_narrow_M3000_herwig7_1_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 10
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
@@ -56,7 +56,7 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
         filterName = cms.untracked.string('')
     ),
     eventAutoFlushCompressedSize = cms.untracked.int32(20971520),
-    fileName = cms.untracked.string('file:Wprime_WZ_WhadZhad_narrow_M3000_herwig7.root'),
+    fileName = cms.untracked.string('file:output.root'),
     outputCommands = process.RAWSIMEventContent.outputCommands,
     splitLevel = cms.untracked.int32(0)
 )
@@ -66,7 +66,7 @@ process.LHEoutput = cms.OutputModule("PoolOutputModule",
         dataTier = cms.untracked.string('LHE'),
         filterName = cms.untracked.string('')
     ),
-    fileName = cms.untracked.string('file:Wprime_WZ_WhadZhad_narrow_M3000_herwig7_inLHE.root'),
+    fileName = cms.untracked.string('file:output_inLHE.root'),
     outputCommands = process.LHEEventContent.outputCommands,
     splitLevel = cms.untracked.int32(0)
 )
