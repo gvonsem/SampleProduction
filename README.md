@@ -102,8 +102,8 @@ Start again in the ```signalProduction``` directory, probably best from a clean 
 
 ```
 export SCRAM_ARCH=slc7_amd64_gcc630
-cmsrel CMSSW_9_4_0_patch1
-cd CMSSW_9_4_0_patch1/src
+cmsrel CMSSW_9_4_6_patch1
+cd CMSSW_9_4_6_patch1/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab.sh
 for i in `ls ../../SampleProduction/MiniAODv2`; do ln -s ../../SampleProduction/MiniAODv2/$i; done
