@@ -106,7 +106,7 @@ cmsrel CMSSW_9_4_6_patch1
 cd CMSSW_9_4_6_patch1/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab.sh
-for i in `ls ../../SampleProduction/MiniAODv2`; do ln -s ../../SampleProduction/MiniAODv2/$i; done
+for i in `ls ../../SampleProduction/DIGI-RECO-MiniAODv2`; do ln -s ../../SampleProduction/DIGI-RECO-MiniAODv2/$i; done
 ```
 
 Put your RECO dataset names into ```datasets_AODSIM.txt```, one per line.
