@@ -23,5 +23,6 @@ config.Data.publication = True
 config.Data.outputDatasetTag = 'DATASETOUT'
 config.Data.allowNonValidInputDataset = True
 
-config.Site.storageSite = 'T2_CH_CSCS'
+#config.Site.storageSite = 'T2_CH_CSCS'
+config.Site.storageSite = 'T2_CH_CERN'
 config.Site.blacklist = ['T3_US_Baylor']
