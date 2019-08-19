@@ -5,6 +5,12 @@ CRABTEMPLATE=crabConfig_MCgeneration_RECO94X_step2.py
 DATE=`date +'%F'`
 
 for DATASETIN in `cat datasets_DIGI.txt`; do
+
+  ##skip lines in txt file that start with #
+  if [[ $DATASETIN == "#"* ]] ; then
+    continue
+  fi
+  
   echo "DATASETIN: $DATASETIN"
   #a=("${(@s/-/)DATASETIN}")
   a=("${(@s|/|)DATASETIN}")
