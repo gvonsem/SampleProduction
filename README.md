@@ -1,5 +1,6 @@
 # SampleProduction
-Scripts for private MC production with crab3. Based on [repository](https://github.com/clelange/QStarProduction) of Clemens Lange.
+Scripts for private MC production with crab3. Based on [repository](https://github.com/clelange/QStarProduction) of Clemens Lange. 
+The production is based on configuration files that can be obtained via the cmsDriver commands that can be obtained from the official dataset production [MCM](https://cms-pdmv.cern.ch/mcm/) database and custom hadronizer fragments. 
 
 ## setup
 
