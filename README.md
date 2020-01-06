@@ -25,8 +25,8 @@ This step needs a working CMS software environment (see above). Need to be in ``
 
 ```
 export SCRAM_ARCH=slc7_amd64_gcc630
-cmsrel CMSSW_9_3_15_patch1
-cd CMSSW_9_3_15_patch1/src
+cmsrel CMSSW_9_3_16_patch1
+cd CMSSW_9_3_16_patch1/src
 cmsenv
 source /cvmfs/cms.cern.ch/crab3/crab.sh
 for i in `ls ../../SampleProduction/GEN-SIM`; do ln -s ../../SampleProduction/GEN-SIM/$i; done
@@ -34,6 +34,7 @@ for i in `ls ../../SampleProduction/GEN-SIM`; do ln -s ../../SampleProduction/GE
 
 Then submit:
 ```
+
 ./submitCrab.sh
 ```
 

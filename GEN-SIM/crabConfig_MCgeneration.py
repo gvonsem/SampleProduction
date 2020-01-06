@@ -11,7 +11,7 @@ config.JobType.psetName = 'configs/CONFIG.py'
 config.JobType.numCores = 4
 config.JobType.allowUndistributedCMSSW = True
 
-config.Data.outputPrimaryDataset = 'Wprime_WZ_WhadZhad_Herwig7'
+config.Data.outputPrimaryDataset = 'TTTo2L2Nu_CustomBdecays_TuneCP5_13TeV-powheg-pythia8'
 config.Data.splitting = 'EventBased'
 config.Data.unitsPerJob = EVENTSJOB
 config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
