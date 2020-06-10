@@ -1,0 +1,77 @@
+import FWCore.ParameterSet.Config as cms
+import os
+
+source = cms.Source("EmptySource")
+
+generator = cms.EDFilter("SherpaGeneratorFilter",
+  maxEventsToPrint = cms.int32(0),
+  filterEfficiency = cms.untracked.double(1.0),
+  crossSection = cms.untracked.double(-1),
+  SherpaProcess = cms.string('ttbar_jetsNLO'),
+  #SherpackLocation = cms.string('./'),
+  SherpackLocation = cms.string('/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc7_amd64_gcc700/13TeV/sherpa/2.2.8/'),
+  SherpackChecksum = cms.string('d4b17d0de5f37944e2c3778866acf2d6'),
+  #FetchSherpack = cms.bool(False),
+  FetchSherpack = cms.bool(True),
+  SherpaPath = cms.string('./'),
+  SherpaPathPiece = cms.string('./'),
+  SherpaResultDir = cms.string('Result'),
+  SherpaDefaultWeight = cms.double(1.0),
+  SherpaParameters = cms.PSet(parameterSets = cms.vstring(
+                             "MPI_Cross_Sections",
+                             "Run"),
+                              MPI_Cross_Sections = cms.vstring(
+				" MPIs in Sherpa, Model = Amisic:",
+				" semihard xsec = 41.8409 mb,",
+				" non-diffractive xsec = 17.0318 mb with nd factor = 0.3142."
+                                                  ),
+                              Run = cms.vstring(
+				" (run){",
+				" EVENTS 10; ERROR 0.99;",
+				" FSF:=1.; RSF:=1.; QSF:=1.;",
+				" SCALES STRICT_METS{FSF*MU_F2}{RSF*MU_R2}{QSF*MU_Q2};",
+				" CORE_SCALE TTBar;",
+				" EXCLUSIVE_CLUSTER_MODE 1;",
+				" METS_BBAR_MODE=5",
+				" NLO_CSS_PSMODE=1",
+				" HEPMC_USE_NAMED_WEIGHTS 1;",
+				" SCALE_VARIATIONS 0.25,0.25 0.25,1. 1.,0.25 1.,4. 4.,1. 4.,4.;",
+				" PDF_LIBRARY LHAPDFSherpa;",
+				" PDF_SET NNPDF30_nlo_as_0118;",
+				" BEAM_1 2212; BEAM_ENERGY_1 = 6500.;",
+				" BEAM_2 2212; BEAM_ENERGY_2 = 6500.;",
+				" NJET:=4; LJET:=2,3; QCUT:=30.;",
+				" ME_SIGNAL_GENERATOR Comix Amegic LOOPGEN;",
+				" OL_PREFIX=/cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/openloops/2.1.0-pafccj",
+				" LOOPGEN:=OpenLoops;",
+				" EVENT_GENERATION_MODE Unweighted;",
+				" CSS_REWEIGHT=1",
+				" REWEIGHT_SPLITTING_ALPHAS_SCALES 1",
+				" REWEIGHT_SPLITTING_PDF_SCALES 1",
+				" CSS_REWEIGHT_SCALE_CUTOFF=5.0",
+				" HEPMC_INCLUDE_ME_ONLY_VARIATIONS=1",
+				" INTEGRATION_ERROR=0.05;",
+				" HARD_DECAYS On; HARD_SPIN_CORRELATIONS 1;",
+				" HDH_STATUS[24,12,-11]=2",
+				" HDH_STATUS[24,14,-13]=2",
+				" HDH_STATUS[24,16,-15]=2",
+				" HDH_STATUS[-24,-12,11]=2",
+				" HDH_STATUS[-24,-14,13]=2",
+				" HDH_STATUS[-24,-16,15]=2",
+				" STABLE[24] 0; STABLE[6] 0; WIDTH[6] 0;",
+				"}(run)",
+				" (processes){",
+				" Process : 93 93 ->  6 -6 93{NJET};",
+				" NLO_QCD_Mode 3 {LJET}; CKKW sqr(QCUT/E_CMS);",
+				" ME_Generator Amegic {LJET};",
+				" RS_ME_Generator Comix {LJET};",
+				" Loop_Generator LOOPGEN;",
+				" Order (*,0);",
+				" Enhance_Observable VAR{log10(max(sqrt(H_T2)-PPerp(p[2])-PPerp(p[3]),(PPerp(p[2])+PPerp(p[3]))/2))}|2|3.3",
+				" End process",
+				"}(processes)"                                                  ),
+                             )
+)
+
+ProductionFilterSequence = cms.Sequence(generator)
+
