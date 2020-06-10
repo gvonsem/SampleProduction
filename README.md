@@ -18,18 +18,18 @@ source /cvmfs/cms.cern.ch/cmsset_default.sh
 
 Note: the CMSSW releases below and corresponding architectures may be adapted according to the recommended [production releases for the campaign](https://cms-pdmv.cern.ch/mcm/campaigns?page=-1&shown=63). Or other changes can be made if differences in configuration with previous samples are to be minimized. 
 
-## GEN-SIM step
+## GEN step
 
-This step needs a working CMS software environment (see above). Need to be in ```signalProduction``` directory. 
+This steps needs a working CMS software environment (see above). Need to be in ```signalProduction``` directory. 
 
 
 ```
-export SCRAM_ARCH=slc7_amd64_gcc630
-cmsrel CMSSW_9_3_15_patch1
-cd CMSSW_9_3_15_patch1/src
+export SCRAM_ARCH=slc7_amd64_gcc700
+cmsrel CMSSW_10_6_12
+cd CMSSW_10_6_12/src
 cmsenv
-source /cvmfs/cms.cern.ch/crab3/crab.sh
-for i in `ls ../../SampleProduction/GEN-SIM`; do ln -s ../../SampleProduction/GEN-SIM/$i; done
+#source /cvmfs/cms.cern.ch/crab3/crab.sh  ##not needed anymore with new crab client
+for i in `ls ../../SampleProduction/GEN`; do ln -s ../../SampleProduction/GEN/$i; done
 ```
 
 Then submit:
@@ -43,6 +43,11 @@ To check the status of your jobs and to resubmit the failed ones:
 ```
 ./resubmit.sh
 ```
+
+## SIM step
+
+Warning, from here instructions not updated yet!
+
 
 ## DIGI, RECO, and MiniAODv2 setup
 
